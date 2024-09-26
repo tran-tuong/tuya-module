@@ -4,10 +4,9 @@ import { AppService } from './app.service';
 import { DevicesModule } from './modules/devices/devices.module';
 import { TuyaModule } from './modules/tuya/tuya.module';
 import { SyncModule } from './modules/sync/sync.module';
-import { ScheduleModule } from './modules/schedule/schedule.module';
 
 @Module({
-  imports: [DevicesModule, TuyaModule, SyncModule, ScheduleModule],
+  imports: [DevicesModule, TuyaModule, SyncModule],
   controllers: [AppController],
   providers: [AppService],
 })

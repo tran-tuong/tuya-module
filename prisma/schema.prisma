@@ -27,9 +27,7 @@ model Device {
   macAddress       String?       @unique
   ipAddress        String?
   lastOnlineAt     DateTime?
-  data             Json   
   status           String       
-  isOnline         Boolean       @default(false)
   createdAt        DateTime      @default(now())
   updatedAt        DateTime      @updatedAt
 }

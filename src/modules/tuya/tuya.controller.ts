@@ -11,23 +11,20 @@ export class TuyaController {
 
   @Get('devices')
   async getAllDevices(@Query('pageSize') pageSize: number) {
-    const devices = await this.syncService.getAllDevices(Number(pageSize) || 10);
+    const devices = await this.syncService.getAllDevices(
+      Number(pageSize) || 10,
+    );
     return {
       message: 'All devices fetched successfully',
       devices,
     };
   }
 
-  // @Get('sync-devices')
-  // async syncDevices() {
-  //   try {
-  //     const syncedDevice = await this.syncService.syncDevices();
-  //     return {
-  //       message: 'Devices synchronized successfully',
-  //       devices: syncedDevice,
-  //     };
-  //   } catch (error) {
-  //     return { message: 'Error synchronizing devices', error: error.message };
-  //   }
-  // }
+  @Get('sync')
+  async syncAllDevices(@Query('pageSize') pageSize: number) {
+    const result = await this.syncService.syncAllDevices(
+      Number(pageSize) || 10,
+    );
+    return result;
+  }
 }
